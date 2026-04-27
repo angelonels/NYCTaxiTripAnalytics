@@ -109,8 +109,20 @@ NYCTaxiTripAnalytics/
 ├── uv.lock
 │
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── raw/                          # raw parquet + zone csv (not tracked)
+│   └── processed/                    # cleaned csvs and summary tables
+│       ├── cleaning_log.csv
+│       ├── daily_demand_summary.csv
+│       ├── hourly_demand_summary.csv
+│       ├── weekday_demand_summary.csv
+│       ├── pickup_borough_summary.csv
+│       ├── dropoff_borough_summary.csv
+│       ├── top_pickup_zones.csv
+│       ├── payment_type_summary.csv
+│       ├── distance_bucket_summary.csv
+│       ├── eda_kpi_summary.csv
+│       ├── eda_correlation_matrix.csv
+│       └── ...                       # additional profiling csvs
 │
 ├── notebooks/
 │   ├── 01_extraction.ipynb
@@ -120,18 +132,19 @@ NYCTaxiTripAnalytics/
 │   └── 05_final_load_prep.ipynb
 │
 ├── scripts/
-│   └── etl_pipeline.py
+│   └── etl_pipeline.py               # standalone cleaning pipeline
 │
-├── tableau/
-│   ├── screenshots/
-│   └── dashboard_links.md
+├── docs/
+│   ├── raw_dataset_profile.md
+│   └── cleaning_summary.md
 │
 ├── reports/
-│   ├── project_report.pdf
-│   └── presentation.pptx
+│   ├── eda_initial_findings.md
+│   └── figures/                      # chart pngs from EDA
 │
-└── docs/
-    └── data_dictionary.md
+└── tableau/
+    ├── screenshots/
+    └── dashboard_links.md
 ```
 
 ## Local Project Setup
@@ -141,11 +154,9 @@ These instructions explain how to run the project after cloning the repository.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/NYCTaxiTripAnalytics.git
+git clone https://github.com/angelonels/NYCTaxiTripAnalytics.git
 cd NYCTaxiTripAnalytics
 ```
-
-Replace `YOUR_USERNAME` with the actual GitHub username or organization name.
 
 ### 2. Install uv
 
@@ -230,13 +241,16 @@ The expected workflow is:
 
 ### 7. Expected Data Outputs
 
-After running the cleaning and final preparation notebooks, processed files will be saved in:
+After running the notebooks, processed summary CSVs and chart PNGs are saved to:
 
 ```text
-data/processed/
+data/processed/       # summary tables and cleaned csvs
+reports/figures/      # chart outputs from EDA
+docs/                 # dataset profile and cleaning log
+reports/              # initial EDA findings
 ```
 
-These files will be used for analysis and Tableau dashboard creation.
+The cleaned parquet file is generated locally but excluded from git due to size (~100 MB).
 
 ## Project Workflow
 
@@ -251,9 +265,9 @@ The project follows this workflow:
 7. Tableau dashboard preparation
 8. Business insights and recommendations
 
-## Planned Key Performance Indicators
+## Key Performance Indicators
 
-The analysis will focus on the following KPIs:
+The analysis covers the following KPIs:
 
 - Total Trips
 - Total Revenue
