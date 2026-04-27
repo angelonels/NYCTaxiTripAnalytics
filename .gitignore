@@ -1,0 +1,26 @@
+cat > .gitignore <<'EOF'
+# macOS
+.DS_Store
+
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+
+.venv/
+
+
+.ipynb_checkpoints/
+
+
+.env
+
+
+*.tmp
+*.log
+
+
+exports/
+EOF
