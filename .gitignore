@@ -23,4 +23,7 @@ __pycache__/
 
 
 exports/
+
+# Large processed data files
+data/processed/*.parquet
 EOF

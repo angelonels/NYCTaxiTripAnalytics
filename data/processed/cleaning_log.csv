@@ -1,0 +1,5 @@
+step_name,rows_before,rows_after,rows_removed,removal_percentage,description
+remove_exact_duplicates,2964624,2964624,0,0.0,Removed exact duplicate trip records.
+remove_invalid_timestamps,2964624,2963754,870,0.0293,Removed records with missing timestamps or drop-off times earlier than pickup times.
+restrict_to_january_2024_pickups,2963754,2963736,18,0.0006,Kept only trips with pickup timestamps in January 2024.
+remove_impossible_trip_values,2963736,2868035,95701,3.2291,"Removed trips with impossible distance, duration, fare, or total amount values."
