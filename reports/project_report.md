@@ -1,299 +1,5 @@
 # NYC Taxi Trip Analytics — Final Project Report
 
----
-
-## 10. Tableau Dashboard Design
-
-*Reference: `tableau/screenshots/` and `tableau/dashboard_links.md`*
-
-### Dashboard Objective
-
-The Tableau dashboard answers one central business question: **"Where, when, and how should NYC Yellow Taxi operators deploy their fleet to maximize revenue?"** It supports both strategic decision-making (borough and zone targeting) and operational decisions (hour-of-day and day-of-week positioning).
-
-### Dashboard: NYC Taxi Operations — 2024 Performance Overview
-
-The published dashboard contains a single comprehensive executive view with multiple chart panels and interactive filters.
-
-#### KPI Banner (Top)
-
-Five headline KPIs are displayed at the top:
-
-| KPI | Value Displayed |
-|---|---|
-| Total Trips | 90B (aggregated display) |
-| Total Revenue | $2,462B (aggregated display) |
-| Avg Total Amount | $27 |
-| Avg Trip Distance | 3.65 mi |
-| Avg Trip Duration | 14.96 min |
-
-#### Chart Panels Included
-
-| Panel | Chart Type | Decision It Supports |
-|---|---|---|
-| Daily Revenue Trend | Line chart | Identifies revenue fluctuation by day for staffing decisions |
-| Trips by Pickup Hour | Bar chart | Identifies peak demand hours for fleet deployment |
-| Trips by Day of Week | Bar chart | Guides weekly shift scheduling |
-| Pickup Borough Demand | Horizontal bar | Shows which boroughs generate most volume |
-| Top 10 Pickup Zones | Horizontal bar | Zone-level hotspot identification |
-| Distance vs Total Amount | Scatter plot | Visualizes the distance-revenue relationship |
-| Payment Type Distribution | Bar chart | Shows credit card vs cash split by volume |
-
-#### Dashboard Tabs (Bottom Navigation)
-
-The dashboard includes the following tab views for drill-down:
-- Pickup Borough Demand
-- Drop-off Borough Demand
-- Top 10 Pickup Zones
-- Payment Type Distribution
-- Tip % by Payment Type
-- Trips by Distance Bucket
-- Revenue per Mile by Distance Bucket
-- Distance vs Total Amount
-
-#### Interactive Filters
-
-The dashboard includes interactive filters allowing users to:
-- Filter by **Pickup Borough**
-- Filter by **Day of Week**
-- Filter by **Payment Type**
-- Filter by **Distance Bucket**
-- Filter by **Pickup Hour**
-
-#### Tableau Public URL
-
-```
-To be added after publishing the dashboard.
-See: tableau/dashboard_links.md
-```
-
-> **Built by:** Deepesh Dey & Rohit Nair P
-
----
-
-## 11. Insights Summary
-
-The following 10 insights are written in decision language — each states what the data means for the business, not just what it shows.
-
-1. **Manhattan is high-volume but low-value; Queens is low-volume but high-value.** With 89.7% of pickups but average fares of only $22.76, Manhattan generates volume at modest revenue. Queens, with 9% of pickups and $72.22 average fare, is the premium revenue corridor. Fleet operators should treat Queens airport zones as a deliberate target, not an afterthought.
-
-2. **JFK Airport is the single most valuable origin zone in NYC, not just in Queens.** At $80.86 average fare per trip and 138,311 pickups in January alone, JFK generates more revenue per pickup than any other top-10 zone. A dedicated JFK positioning strategy during airport surge windows can meaningfully raise per-driver daily earnings.
-
-3. **The evening rush (18:00) is the single most critical operational window.** Hour 18 commands the highest trip volume in the dataset. Operators who are not actively positioned in Midtown, Penn Station, and Times Square between 17:00–19:00 are missing the highest-demand window of the day.
-
-4. **Short trips are revenue-efficient per mile; long trips are revenue-efficient per absolute amount.** Trips of 0–1 miles earn $19.32/mile median, while 10–20 mile trips earn only $5.54/mile but deliver $81.50 per trip. A mixed fleet strategy — optimizing for throughput in Manhattan and absolute value in Queens — maximizes both dimensions simultaneously.
-
-5. **Credit card users generate 26.28% tip rates; cash users generate effectively zero recorded tips.** This is not simply a preference difference — it is a structural revenue capture gap. Every shift in payment from cash to card directly increases verifiable per-trip earnings. The $4.16 average tip from card users vs $0.00 from cash users represents real income.
-
-6. **Weekday trips generate $1.65 more per trip than weekend trips, despite being shorter in distance.** Congestion surcharges, congestion pricing, and metered time components make weekday urban trips more valuable per mile than weekend trips. This is statistically significant and economically meaningful for shift planning.
-
-7. **Wednesday is the highest-revenue day of the week ($13.2M in January).** Mid-week business travel — corporate commutes, airport business travel, and medical appointments — drives a volume and revenue peak. Wednesday morning through Thursday evening is the golden operating window.
-
-8. **The regression model explains 92.96% of fare variation using only trip characteristics.** This means taxi revenue is highly systematic — it is not random. Distance, duration, rate code, and borough together nearly fully determine what a trip will earn, which means positioning decisions can be modeled and optimized with high confidence.
-
-9. **Brooklyn and the Bronx are statistically underserved relative to their revenue potential.** Brooklyn trips average $33.19 and Bronx trips $35.44 — both exceeding Manhattan's $22.76 — yet they represent only 0.97% of total pickups combined. These boroughs represent an underexplored market with above-average revenue per trip.
-
-10. **Payment type and distance bucket are statistically associated, but practically weakly (Cramér's V = 0.044).** Short-trip cash dominance is real but small in magnitude. The most effective intervention is not to enforce card payment on short trips, but to use in-app tipping prompts for card users across all distance categories, where the 26% average tip rate already demonstrates strong willingness to tip.
-
----
-
-## 12. Recommendations
-
-### Recommendation 1: Establish a Dedicated Queens Airport Positioning Strategy
-
-**Insight → Recommendation:** Queens trips average $72.22 per trip (vs Manhattan's $22.76), driven by JFK ($80.86) and LaGuardia ($66.36) airport demand. A deliberate positioning policy — routing available drivers to airport zones during flight arrival windows (6–9 AM, 3–6 PM, 10 PM–1 AM) — can increase per-driver daily revenue by an estimated 15–25%.
-
-**Expected Impact:** If 5% of Manhattan-idle drivers (≈128,600 trips/month) shift to Queens airport zones, and average revenue increases from $22.76 to $70 per trip, the revenue uplift is approximately **$6.1M per month** at the fleet level.
-
-**Feasibility:** Requires dispatcher coordination or app-level zone incentives. No infrastructure investment needed. Can be piloted in 30 days.
-
----
-
-### Recommendation 2: Implement Credit Card Adoption Incentives for Short-Trip Passengers
-
-**Insight → Recommendation:** Card users tip 26.28% vs ~0% for cash users on recorded data. The bulk of cash trips are in the 0–3 mile bracket. Offering a small card-payment incentive (e.g., $1 fare discount for first card payment) can shift payment behavior in the highest-volume segment.
-
-**Expected Impact:** If 10% of the 422,295 monthly cash trips convert to card, and card users generate $4.16 more per trip in tips, the incremental tip revenue is approximately **$175,700 per month** at current volume.
-
-**Feasibility:** Requires TLC or fleet operator app modification. Low cost, moderate change management effort. Pilots can be validated within one billing cycle.
-
----
-
-### Recommendation 3: Shift Fleet Supply to Match the 17:00–19:00 Evening Peak
-
-**Insight → Recommendation:** Hour 18 is the peak demand hour. Current supply likely under-meets demand in this window, leading to surge wait times that reduce customer satisfaction and push riders toward app-based alternatives. Actively rostering drivers for 16:00–20:00 shifts maximizes revenue-per-active-hour.
-
-**Expected Impact:** Closing a conservative 5% supply gap during peak hours (≈5,000 trips/day) at $27 average adds **$135,000/day** or approximately **$4.05M/month** in recoverable revenue across the fleet.
-
-**Feasibility:** Requires shift scheduling changes and driver incentive alignment. Moderate implementation complexity.
-
----
-
-### Recommendation 4: Develop an Outer Borough Demand Growth Programme
-
-**Insight → Recommendation:** Brooklyn and the Bronx generate above-Manhattan per-trip revenue ($33–$35 average) but receive fewer than 1% of total taxi supply. A targeted awareness or dispatch incentive program for outer borough trips can unlock a structurally underserved market.
-
-**Expected Impact:** Even a doubling of Brooklyn and Bronx trip volume (from 28,000 to 56,000 per month) at $34 average adds **$952,000/month** in additional revenue.
-
-**Feasibility:** Requires zone-based dispatch incentives. Medium effort, significant upside given the currently near-zero positioning in these markets.
-
----
-
-### Recommendation 5: Use Wednesday as the Benchmarking Baseline for Operational Efficiency
-
-**Insight → Recommendation:** Wednesday consistently generates the highest trip volume and revenue. Operational KPIs (trips per driver, revenue per shift, wait time) should be measured against Wednesday performance as the peak-efficiency benchmark, not averages.
-
-**Expected Impact:** Better benchmarking improves driver performance coaching, shift allocation, and revenue target-setting. Non-monetary benefit with high analytical value.
-
-**Feasibility:** Requires reporting system configuration only. Low effort, high impact on management decision quality.
-
----
-
-## 13. Impact Estimation
-
-| Recommendation | Monthly Impact Estimate | Confidence | Time to Implement |
-|---|---|---|---|
-| Queens Airport Positioning Strategy | +$6.1M revenue | Medium-High | 30 days |
-| Credit Card Adoption Incentives | +$175,700 tip revenue | Medium | 60 days |
-| Evening Peak Fleet Deployment | +$4.05M recoverable revenue | Medium | 30 days |
-| Outer Borough Demand Growth | +$952,000 revenue | Low-Medium | 90 days |
-| Benchmarking Realignment | Non-monetary | High | 14 days |
-
-**Why act now?** January 2024 represents a post-holiday demand trough. If these structural patterns hold in higher-demand months (May–October), the uplift potential is proportionally larger. Early implementation allows the fleet to enter the spring and summer peak season with optimized positioning already in place.
-
----
-
-## 14. Limitations
-
-1. **Single-month snapshot.** January 2024 is one of the lowest-demand months of the year (post-holiday lull, winter weather effects). Seasonal patterns in spring and summer may differ materially. Generalizing these findings to the full year requires caution.
-
-2. **Cash tip under-recording.** The analysis of tip behavior is limited to electronically recorded tips. Cash tips — which may be substantial — are entirely absent from the dataset. The 0% average cash tip rate is a data artifact, not a behavioral fact.
-
-3. **No driver-level data.** The dataset contains no medallion, driver, or vehicle identifiers. Revenue and efficiency findings represent trip-level averages across the entire fleet, not individual driver performance.
-
-4. **External factors excluded.** Weather events, public transit disruptions, major events (concerts, sports, political events), and holiday effects in January were not controlled for. These can materially shift demand patterns.
-
-5. **Zone mapping completeness.** 10,316 trips (0.36%) could not be mapped to a named borough. These are labeled "Unknown" and excluded from borough-level analysis. If these are systematically from specific areas, the analysis may undercount certain zones.
-
-6. **Regression does not imply causation.** The OLS model explaining 92.96% of revenue variance is a descriptive model, not a causal one. Rate code and distance are the dominant drivers because they are mechanical inputs to the metered fare formula — not independent business levers.
-
----
-
-## 15. Future Scope
-
-1. **Multi-month trend analysis.** Extending the dataset to cover a full year (all 12 months of 2024) would reveal seasonal demand cycles, holiday effects, and year-over-year comparison opportunities. This would allow proper time-series forecasting.
-
-2. **Real-time demand prediction model.** Using historical hourly demand patterns by zone, a machine learning model (e.g., XGBoost or LSTM) could predict demand 1–2 hours ahead, enabling proactive dispatch recommendations.
-
-3. **Weather data integration.** Joining hourly weather data (temperature, precipitation, visibility) from NOAA or Open-Meteo with trip records would quantify how weather affects demand, allowing weather-triggered dispatch strategies.
-
-4. **Competitive benchmarking.** Integrating Uber/Lyft (HVFHV) data from the same TLC dataset would allow direct comparison of taxi vs. ride-hailing demand by zone and hour — quantifying where taxis are gaining or losing market share.
-
-5. **Driver-level earnings simulation.** If driver/medallion IDs were available, a simulation model could estimate individual earnings uplift from each of the four positioning recommendations, allowing personalized driver coaching.
-
-6. **Live Tableau dashboard.** The current dashboard uses a static January 2024 extract. A pipeline connecting to TLC's real-time data feed (monthly Parquet releases) could automate refresh and enable ongoing monitoring.
-
----
-
-## 16. Conclusion
-
-NYC Yellow Taxis generated 2.87 million trips and $78.4 million in revenue in January 2024 alone — yet the data reveals substantial, addressable inefficiencies in how that revenue is distributed across time, geography, and payment channels. Manhattan's dominance masks the superior per-trip revenue potential of Queens airport routes. The 6 PM evening peak is underutilized relative to its volume. Credit card tipping creates a verifiable 26% tip capture rate that cash transactions cannot match.
-
-This project built a complete, reproducible Python ETL and statistical analysis pipeline — from raw Parquet data to Tableau-ready exports — and delivered seven statistically validated findings using correlation testing, Mann-Whitney U, ANOVA, chi-square, and OLS regression. The evidence consistently points to the same strategic direction: move supply toward where revenue per trip is highest, not just where volume is highest.
-
-The recommended actions — airport zone positioning, card adoption incentives, evening peak deployment, and outer borough expansion — are estimated to recover over $10M in monthly fleet revenue with low-to-medium implementation complexity and 30–90 day timelines.
-
----
-
-## 17. Appendix
-
-### A. Data Dictionary
-
-See: `docs/data_dictionary.md` (full column definitions for all 47 fields in the cleaned dataset).
-
-### B. Cleaning Log
-
-| Step | Rows Before | Rows After | Removed | % |
-|---|---|---|---|---|
-| Remove exact duplicates | 2,964,624 | 2,964,624 | 0 | 0.00% |
-| Remove invalid timestamps | 2,964,624 | 2,963,754 | 870 | 0.03% |
-| Restrict to January 2024 | 2,963,754 | 2,963,736 | 18 | <0.01% |
-| Remove impossible values | 2,963,736 | 2,868,035 | 95,701 | 3.23% |
-
-### C. Additional EDA Outputs
-
-All chart PNGs are committed to `reports/figures/`:
-- `daily_taxi_trip_demand.png`
-- `hourly_taxi_demand.png`
-- `hourly_revenue.png`
-- `pickup_borough_trips.png`
-- `dropoff_borough_trips.png`
-- `top_pickup_zones.png`
-- `trip_distance_distribution.png`
-- `trip_duration_distribution.png`
-- `payment_type_distribution.png`
-- `distance_bucket_trips.png`
-- `distance_vs_total_amount.png`
-- `tip_percentage_by_payment_type.png`
-- `weekday_taxi_demand.png`
-- `weekday_vs_weekend_average_total_amount.png`
-- `average_total_amount_by_pickup_borough.png`
-- `payment_type_share_by_distance_bucket.png`
-- `median_revenue_per_mile_by_distance_bucket.png`
-- `actual_vs_predicted_total_amount.png`
-
-### D. Processed Statistical Outputs
-
-All statistical summary CSVs are committed to `data/processed/`:
-- `statistical_pearson_correlation_matrix.csv`
-- `statistical_spearman_correlation_matrix.csv`
-- `statistical_correlation_test_results.csv`
-- `weekday_vs_weekend_statistical_tests.csv`
-- `pickup_borough_group_comparison_tests.csv`
-- `pickup_borough_statistical_summary.csv`
-- `payment_distance_chi_square_test.csv`
-- `payment_distance_distribution_percentages.csv`
-- `tip_behavior_statistical_test.csv`
-- `payment_tip_statistical_summary.csv`
-- `distance_efficiency_summary.csv`
-- `ols_revenue_driver_coefficients.csv`
-- `ols_revenue_driver_model_summary.csv`
-- `sklearn_revenue_model_performance.csv`
-
----
-
-## 18. Contribution Matrix
-
-| Phase | Ayush Kumar Singh | Angelo Nelson | Isha Singh | Deepesh Dey | Rohit Nair P |
-|---|---|---|---|---|---|
-| **Dataset & Sourcing** | | ✅ Primary | | | |
-| **ETL & Cleaning** | | ✅ Primary | | | |
-| **EDA & Analysis** | | ✅ Primary | | | |
-| **Statistical Analysis** | ✅ Primary | | | | |
-| **Final Load Prep** | | | ✅ Primary | | |
-| **Tableau Dashboard** | | | | ✅ 50% | ✅ 50% |
-| **Report Writing** | | | ✅ Contributed | | |
-| **PPT & Viva Prep** | | | | | |
-
-### Contribution Notes (Based on GitHub Commit History)
-
-**Angelo Nelson (`angelonels`):**
-Commits: Initial project setup, folder structure with `uv`, raw data extraction notebook (`01_extraction.ipynb`), full ETL and cleaning pipeline (`02_cleaning.ipynb`, `scripts/etl_pipeline.py`), EDA notebook (`03_eda.ipynb`), processed summary CSVs, dataset profile and cleaning documentation, README updates.
-*Primary contributor for Dataset Sourcing, ETL, and Exploratory Data Analysis.*
-
-**Ayush Kumar Singh (`AyushCoder9`):**
-Commits: All 52 commits comprising the complete statistical analysis notebook (`04_statistical_analysis.ipynb`) — covering correlation analysis, weekday/weekend hypothesis testing, borough group comparison, chi-square test for payment behavior, tip behavior analysis, OLS regression, Scikit-learn model evaluation, revenue efficiency analysis, statistical findings report, visualization plots, and processed statistical datasets.
-*Primary contributor for Statistical Analysis.*
-
-**Isha Singh (`Ishiezz`):**
-Commits: Final load preparation notebook (`05_final_load_prep.ipynb`), all 13 Tableau-ready processed CSV files, data dictionary (`docs/data_dictionary.md`), Tableau data guide documentation, final load summary documentation, Tableau dashboard placeholder link.
-*Primary contributor for Final Load Preparation and Documentation.*
-
-**Deepesh Dey:**
-Built and published the Tableau Public dashboard — executive KPI view, daily revenue trend, hourly demand chart, borough demand visualization, top 10 pickup zones, payment distribution, distance vs total amount scatter, and all interactive filters. Responsible for 50% of dashboard design and layout decisions.
-
-**Rohit Nair P:**
-Co-built the Tableau Public dashboard — drop-off borough demand, tip percentage by payment type, trips by distance bucket, revenue per mile by distance bucket, day-of-week analysis, and tab navigation structure. Responsible for 50% of dashboard design and drill-down view construction.
-
 **Data Visualization & Analytics | Capstone 2**
 
 ---
@@ -587,7 +293,7 @@ Manhattan is the dominant origin borough, generating 2,572,024 pickups (89.7% of
 | Borough | Trips | Avg Amount | Avg Distance | Avg Duration |
 |---|---|---|---|---|
 | Manhattan | 2,572,024 | $22.76 | 2.72 miles | 13.01 min |
-| Queens | 257,603 | $72.22 | 12.81 miles | 32.40 min |
+| Queens | 257,603 | $72.22 | 12.81 miles | 32.39 min |
 | Brooklyn | 22,254 | $33.19 | 14.82 miles | 31.64 min |
 | Bronx | 5,742 | $35.44 | 7.73 miles | 38.17 min |
 | Staten Island | 46 | $61.03 | 9.99 miles | 20.18 min |
@@ -720,3 +426,279 @@ An OLS regression model (Statsmodels) was fitted to explain total trip amount us
 Short trips (0–1 miles) generate **$19.32 median revenue per mile**, nearly 4× the efficiency of 20+ mile trips ($4.59/mile). However, volume-adjusted total revenue is highest in the 1–3 mile segment ($28.6M across January), driven by sheer trip count (1.4M trips).
 
 **Business implication:** A portfolio approach is optimal: maximize short-trip throughput in Manhattan for revenue efficiency, while positioning selectively for long-distance airport trips for absolute revenue size.
+
+---
+
+## 10. Tableau Dashboard Design
+
+*Reference: `tableau/screenshots/` and `tableau/dashboard_links.md`*
+
+### Dashboard Objective
+
+The Tableau dashboard answers one central business question: **"Where, when, and how should NYC Yellow Taxi operators deploy their fleet to maximize revenue?"** It supports both strategic decision-making (borough and zone targeting) and operational decisions (hour-of-day and day-of-week positioning).
+
+### Dashboard: NYC Taxi Operations — 2024 Performance Overview
+
+The published dashboard contains a single comprehensive executive view with multiple chart panels and interactive filters.
+
+#### KPI Banner (Top)
+
+Five headline KPIs are displayed at the top:
+
+| KPI | Value Displayed |
+|---|---|
+| Total Trips | 90B (aggregated display) |
+| Total Revenue | $2,462B (aggregated display) |
+| Avg Total Amount | $27 |
+| Avg Trip Distance | 3.65 mi |
+| Avg Trip Duration | 14.96 min |
+
+#### Chart Panels Included
+
+| Panel | Chart Type | Decision It Supports |
+|---|---|---|
+| Daily Revenue Trend | Line chart | Identifies revenue fluctuation by day for staffing decisions |
+| Trips by Pickup Hour | Bar chart | Identifies peak demand hours for fleet deployment |
+| Trips by Day of Week | Bar chart | Guides weekly shift scheduling |
+| Pickup Borough Demand | Horizontal bar | Shows which boroughs generate most volume |
+| Top 10 Pickup Zones | Horizontal bar | Zone-level hotspot identification |
+| Distance vs Total Amount | Scatter plot | Visualizes the distance-revenue relationship |
+| Payment Type Distribution | Bar chart | Shows credit card vs cash split by volume |
+
+#### Dashboard Tabs (Bottom Navigation)
+
+The dashboard includes the following tab views for drill-down:
+- Pickup Borough Demand
+- Drop-off Borough Demand
+- Top 10 Pickup Zones
+- Payment Type Distribution
+- Tip % by Payment Type
+- Trips by Distance Bucket
+- Revenue per Mile by Distance Bucket
+- Distance vs Total Amount
+
+#### Interactive Filters
+
+The dashboard includes interactive filters allowing users to:
+- Filter by **Pickup Borough**
+- Filter by **Day of Week**
+- Filter by **Payment Type**
+- Filter by **Distance Bucket**
+- Filter by **Pickup Hour**
+
+#### Tableau Public URL
+
+```
+To be added after publishing the dashboard.
+See: tableau/dashboard_links.md
+```
+
+> **Built by:** Deepesh Dey & Rohit Nair P
+
+---
+
+## 11. Insights Summary
+
+The following 10 insights are written in decision language — each states what the data means for the business, not just what it shows.
+
+1. **Manhattan is high-volume but low-value; Queens is low-volume but high-value.** With 89.7% of pickups but average fares of only $22.76, Manhattan generates volume at modest revenue. Queens, with 9% of pickups and $72.22 average fare, is the premium revenue corridor. Fleet operators should treat Queens airport zones as a deliberate target, not an afterthought.
+
+2. **JFK Airport is the single most valuable origin zone in NYC, not just in Queens.** At $80.86 average fare per trip and 138,311 pickups in January alone, JFK generates more revenue per pickup than any other top-10 zone. A dedicated JFK positioning strategy during airport surge windows can meaningfully raise per-driver daily earnings.
+
+3. **The evening rush (18:00) is the single most critical operational window.** Hour 18 commands the highest trip volume in the dataset. Operators who are not actively positioned in Midtown, Penn Station, and Times Square between 17:00–19:00 are missing the highest-demand window of the day.
+
+4. **Short trips are revenue-efficient per mile; long trips are revenue-efficient per absolute amount.** Trips of 0–1 miles earn $19.32/mile median, while 10–20 mile trips earn only $5.54/mile but deliver $81.50 per trip. A mixed fleet strategy — optimizing for throughput in Manhattan and absolute value in Queens — maximizes both dimensions simultaneously.
+
+5. **Credit card users generate 26.28% tip rates; cash users generate effectively zero recorded tips.** This is not simply a preference difference — it is a structural revenue capture gap. Every shift in payment from cash to card directly increases verifiable per-trip earnings. The $4.16 average tip from card users vs $0.00 from cash users represents real income.
+
+6. **Weekday trips generate $1.65 more per trip than weekend trips, despite being shorter in distance.** Congestion surcharges, congestion pricing, and metered time components make weekday urban trips more valuable per mile than weekend trips. This is statistically significant and economically meaningful for shift planning.
+
+7. **Wednesday is the highest-revenue day of the week ($13.2M in January).** Mid-week business travel — corporate commutes, airport business travel, and medical appointments — drives a volume and revenue peak. Wednesday morning through Thursday evening is the golden operating window.
+
+8. **The regression model explains 92.96% of fare variation using only trip characteristics.** This means taxi revenue is highly systematic — it is not random. Distance, duration, rate code, and borough together nearly fully determine what a trip will earn, which means positioning decisions can be modeled and optimized with high confidence.
+
+9. **Brooklyn and the Bronx are statistically underserved relative to their revenue potential.** Brooklyn trips average $33.19 and Bronx trips $35.44 — both exceeding Manhattan's $22.76 — yet they represent only 0.97% of total pickups combined. These boroughs represent an underexplored market with above-average revenue per trip.
+
+10. **Payment type and distance bucket are statistically associated, but practically weakly (Cramér's V = 0.044).** Short-trip cash dominance is real but small in magnitude. The most effective intervention is not to enforce card payment on short trips, but to use in-app tipping prompts for card users across all distance categories, where the 26% average tip rate already demonstrates strong willingness to tip.
+
+---
+
+## 12. Recommendations
+
+### Recommendation 1: Establish a Dedicated Queens Airport Positioning Strategy
+
+**Insight → Recommendation:** Queens trips average $72.22 per trip (vs Manhattan's $22.76), driven by JFK ($80.86) and LaGuardia ($66.36) airport demand. A deliberate positioning policy — routing available drivers to airport zones during flight arrival windows (6–9 AM, 3–6 PM, 10 PM–1 AM) — can increase per-driver daily revenue by an estimated 15–25%.
+
+**Expected Impact:** If 5% of Manhattan-idle drivers (≈128,600 trips/month) shift to Queens airport zones, and average revenue increases from $22.76 to $70 per trip, the revenue uplift is approximately **$6.1M per month** at the fleet level.
+
+**Feasibility:** Requires dispatcher coordination or app-level zone incentives. No infrastructure investment needed. Can be piloted in 30 days.
+
+---
+
+### Recommendation 2: Implement Credit Card Adoption Incentives for Short-Trip Passengers
+
+**Insight → Recommendation:** Card users tip 26.28% vs ~0% for cash users on recorded data. The bulk of cash trips are in the 0–3 mile bracket. Offering a small card-payment incentive (e.g., $1 fare discount for first card payment) can shift payment behavior in the highest-volume segment.
+
+**Expected Impact:** If 10% of the 422,295 monthly cash trips convert to card, and card users generate $4.16 more per trip in tips, the incremental tip revenue is approximately **$175,700 per month** at current volume.
+
+**Feasibility:** Requires TLC or fleet operator app modification. Low cost, moderate change management effort. Pilots can be validated within one billing cycle.
+
+---
+
+### Recommendation 3: Shift Fleet Supply to Match the 17:00–19:00 Evening Peak
+
+**Insight → Recommendation:** Hour 18 is the peak demand hour. Current supply likely under-meets demand in this window, leading to surge wait times that reduce customer satisfaction and push riders toward app-based alternatives. Actively rostering drivers for 16:00–20:00 shifts maximizes revenue-per-active-hour.
+
+**Expected Impact:** Closing a conservative 5% supply gap during peak hours (≈5,000 trips/day) at $27 average adds **$135,000/day** or approximately **$4.05M/month** in recoverable revenue across the fleet.
+
+**Feasibility:** Requires shift scheduling changes and driver incentive alignment. Moderate implementation complexity.
+
+---
+
+### Recommendation 4: Develop an Outer Borough Demand Growth Programme
+
+**Insight → Recommendation:** Brooklyn and the Bronx generate above-Manhattan per-trip revenue ($33–$35 average) but receive fewer than 1% of total taxi supply. A targeted awareness or dispatch incentive program for outer borough trips can unlock a structurally underserved market.
+
+**Expected Impact:** Even a doubling of Brooklyn and Bronx trip volume (from 28,000 to 56,000 per month) at $34 average adds **$952,000/month** in additional revenue.
+
+**Feasibility:** Requires zone-based dispatch incentives. Medium effort, significant upside given the currently near-zero positioning in these markets.
+
+---
+
+### Recommendation 5: Use Wednesday as the Benchmarking Baseline for Operational Efficiency
+
+**Insight → Recommendation:** Wednesday consistently generates the highest trip volume and revenue. Operational KPIs (trips per driver, revenue per shift, wait time) should be measured against Wednesday performance as the peak-efficiency benchmark, not averages.
+
+**Expected Impact:** Better benchmarking improves driver performance coaching, shift allocation, and revenue target-setting. Non-monetary benefit with high analytical value.
+
+**Feasibility:** Requires reporting system configuration only. Low effort, high impact on management decision quality.
+
+---
+
+## 13. Impact Estimation
+
+| Recommendation | Monthly Impact Estimate | Confidence | Time to Implement |
+|---|---|---|---|
+| Queens Airport Positioning Strategy | +$6.1M revenue | Medium-High | 30 days |
+| Credit Card Adoption Incentives | +$175,700 tip revenue | Medium | 60 days |
+| Evening Peak Fleet Deployment | +$4.05M recoverable revenue | Medium | 30 days |
+| Outer Borough Demand Growth | +$952,000 revenue | Low-Medium | 90 days |
+| Benchmarking Realignment | Non-monetary | High | 14 days |
+
+**Why act now?** January 2024 represents a post-holiday demand trough. If these structural patterns hold in higher-demand months (May–October), the uplift potential is proportionally larger. Early implementation allows the fleet to enter the spring and summer peak season with optimized positioning already in place.
+
+---
+
+## 14. Limitations
+
+1. **Single-month snapshot.** January 2024 is one of the lowest-demand months of the year (post-holiday lull, winter weather effects). Seasonal patterns in spring and summer may differ materially. Generalizing these findings to the full year requires caution.
+
+2. **Cash tip under-recording.** The analysis of tip behavior is limited to electronically recorded tips. Cash tips — which may be substantial — are entirely absent from the dataset. The 0% average cash tip rate is a data artifact, not a behavioral fact.
+
+3. **No driver-level data.** The dataset contains no medallion, driver, or vehicle identifiers. Revenue and efficiency findings represent trip-level averages across the entire fleet, not individual driver performance.
+
+4. **External factors excluded.** Weather events, public transit disruptions, major events (concerts, sports, political events), and holiday effects in January were not controlled for. These can materially shift demand patterns.
+
+5. **Zone mapping completeness.** 10,316 trips (0.36%) could not be mapped to a named borough. These are labeled "Unknown" and excluded from borough-level analysis. If these are systematically from specific areas, the analysis may undercount certain zones.
+
+6. **Regression does not imply causation.** The OLS model explaining 92.96% of revenue variance is a descriptive model, not a causal one. Rate code and distance are the dominant drivers because they are mechanical inputs to the metered fare formula — not independent business levers.
+
+---
+
+## 15. Future Scope
+
+1. **Multi-month trend analysis.** Extending the dataset to cover a full year (all 12 months of 2024) would reveal seasonal demand cycles, holiday effects, and year-over-year comparison opportunities. This would allow proper time-series forecasting.
+
+2. **Real-time demand prediction model.** Using historical hourly demand patterns by zone, a machine learning model (e.g., XGBoost or LSTM) could predict demand 1–2 hours ahead, enabling proactive dispatch recommendations.
+
+3. **Weather data integration.** Joining hourly weather data (temperature, precipitation, visibility) from NOAA or Open-Meteo with trip records would quantify how weather affects demand, allowing weather-triggered dispatch strategies.
+
+4. **Competitive benchmarking.** Integrating Uber/Lyft (HVFHV) data from the same TLC dataset would allow direct comparison of taxi vs. ride-hailing demand by zone and hour — quantifying where taxis are gaining or losing market share.
+
+5. **Driver-level earnings simulation.** If driver/medallion IDs were available, a simulation model could estimate individual earnings uplift from each of the four positioning recommendations, allowing personalized driver coaching.
+
+6. **Live Tableau dashboard.** The current dashboard uses a static January 2024 extract. A pipeline connecting to TLC's real-time data feed (monthly Parquet releases) could automate refresh and enable ongoing monitoring.
+
+---
+
+## 16. Conclusion
+
+NYC Yellow Taxis generated 2.87 million trips and $78.4 million in revenue in January 2024 alone — yet the data reveals substantial, addressable inefficiencies in how that revenue is distributed across time, geography, and payment channels. Manhattan's dominance masks the superior per-trip revenue potential of Queens airport routes. The 6 PM evening peak is underutilized relative to its volume. Credit card tipping creates a verifiable 26% tip capture rate that cash transactions cannot match.
+
+This project built a complete, reproducible Python ETL and statistical analysis pipeline — from raw Parquet data to Tableau-ready exports — and delivered seven statistically validated findings using correlation testing, Mann-Whitney U, ANOVA, chi-square, and OLS regression. The evidence consistently points to the same strategic direction: move supply toward where revenue per trip is highest, not just where volume is highest.
+
+The recommended actions — airport zone positioning, card adoption incentives, evening peak deployment, and outer borough expansion — are estimated to recover over $10M in monthly fleet revenue with low-to-medium implementation complexity and 30–90 day timelines.
+
+---
+
+## 17. Appendix
+
+### A. Data Dictionary
+
+See: `docs/data_dictionary.md` (full column definitions for all 47 fields in the cleaned dataset).
+
+### B. Cleaning Log
+
+| Step | Rows Before | Rows After | Removed | % |
+|---|---|---|---|---|
+| Remove exact duplicates | 2,964,624 | 2,964,624 | 0 | 0.00% |
+| Remove invalid timestamps | 2,964,624 | 2,963,754 | 870 | 0.03% |
+| Restrict to January 2024 | 2,963,754 | 2,963,736 | 18 | <0.01% |
+| Remove impossible values | 2,963,736 | 2,868,035 | 95,701 | 3.23% |
+
+### C. Additional EDA Outputs
+
+All chart PNGs are committed to `reports/figures/`:
+- `daily_taxi_trip_demand.png`
+- `hourly_taxi_demand.png`
+- `hourly_revenue.png`
+- `pickup_borough_trips.png`
+- `dropoff_borough_trips.png`
+- `top_pickup_zones.png`
+- `trip_distance_distribution.png`
+- `trip_duration_distribution.png`
+- `payment_type_distribution.png`
+- `distance_bucket_trips.png`
+- `distance_vs_total_amount.png`
+- `tip_percentage_by_payment_type.png`
+- `weekday_taxi_demand.png`
+- `weekday_vs_weekend_average_total_amount.png`
+- `average_total_amount_by_pickup_borough.png`
+- `payment_type_share_by_distance_bucket.png`
+- `median_revenue_per_mile_by_distance_bucket.png`
+- `actual_vs_predicted_total_amount.png`
+
+---
+
+## 18. Contribution Matrix
+
+| Phase | Ayush Kumar Singh | Angelo Nelson | Isha Singh | Deepesh Dey | Rohit Nair P |
+|---|---|---|---|---|---|
+| **Dataset & Sourcing** | | ✅ Primary | | | |
+| **ETL & Cleaning** | | ✅ Primary | | | |
+| **EDA & Analysis** | | ✅ Primary | | | |
+| **Statistical Analysis** | ✅ Primary | | | | |
+| **Final Load Prep** | | | ✅ Primary | | |
+| **Tableau Dashboard** | | | | ✅ 50% | ✅ 50% |
+| **Report Writing** | ✅ Primary | | ✅ Contributed | | |
+| **PPT & Viva Prep** | | | | | |
+
+### Contribution Notes (Based on GitHub Commit History)
+
+**Angelo Nelson (`angelonels`):**
+Commits: Initial project setup, folder structure with `uv`, raw data extraction notebook (`01_extraction.ipynb`), full ETL and cleaning pipeline (`02_cleaning.ipynb`, `scripts/etl_pipeline.py`), EDA notebook (`03_eda.ipynb`), processed summary CSVs, dataset profile and cleaning documentation, README updates.
+*Primary contributor for Dataset Sourcing, ETL, and Exploratory Data Analysis.*
+
+**Ayush Kumar Singh (`AyushCoder9`):**
+Commits: All 52 commits comprising the complete statistical analysis notebook (`04_statistical_analysis.ipynb`) — covering correlation analysis, weekday/weekend hypothesis testing, borough group comparison, chi-square test for payment behavior, tip behavior analysis, OLS regression, Scikit-learn model evaluation, revenue efficiency analysis, statistical findings report, visualization plots, and processed statistical datasets.
+*Primary contributor for Statistical Analysis and Report Writing.*
+
+**Isha Singh (`Ishiezz`):**
+Commits: Final load preparation notebook (`05_final_load_prep.ipynb`), all 13 Tableau-ready processed CSV files, data dictionary (`docs/data_dictionary.md`), Tableau data guide documentation, final load summary documentation, Tableau dashboard placeholder link.
+*Primary contributor for Final Load Preparation and Documentation.*
+
+**Deepesh Dey:**
+Built and published the Tableau Public dashboard — executive KPI view, daily revenue trend, hourly demand chart, borough demand visualization, top 10 pickup zones, payment distribution, distance vs total amount scatter, and all interactive filters. Responsible for 50% of dashboard design and layout decisions.
+
+**Rohit Nair P:**
+Co-built the Tableau Public dashboard — drop-off borough demand, tip percentage by payment type, trips by distance bucket, revenue per mile by distance bucket, day-of-week analysis, and tab navigation structure. Responsible for 50% of dashboard design and drill-down view construction.
