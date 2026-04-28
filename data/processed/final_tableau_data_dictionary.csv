@@ -1,0 +1,29 @@
+column_name,description,data_type,example_use
+pickup_datetime,Date and time when the taxi trip started.,datetime,Time trend analysis and filtering.
+dropoff_datetime,Date and time when the taxi trip ended.,datetime,Trip duration calculation.
+pickup_date,Date of taxi pickup.,date,Daily demand and revenue trend analysis.
+pickup_hour,"Hour of day when the trip started, from 0 to 23.",integer,Peak demand hour analysis.
+pickup_day_name,Day name of trip pickup.,categorical,Weekday demand comparison.
+is_weekend,Boolean flag identifying Saturday and Sunday trips.,boolean,Weekday vs weekend comparison.
+vendor_name,Readable taxi technology vendor name.,categorical,Vendor-level trip comparison.
+rate_code_label,"Readable rate category such as Standard rate, JFK, Newark, or Negotiated fare.",categorical,Fare type analysis.
+payment_type_label,Readable payment type such as Credit card or Cash.,categorical,Payment and tipping behavior analysis.
+passenger_count_clean,Cleaned passenger count field.,integer,Passenger group analysis.
+passenger_count_group,"Passenger count grouped as Solo, Small group, Large group, Unknown, or Zero reported.",categorical,Segmented demand analysis.
+trip_distance,Trip distance in miles.,numeric,Distance and revenue efficiency analysis.
+trip_duration_minutes,Trip duration in minutes.,numeric,Duration and congestion-related analysis.
+fare_amount,Base fare charged for the taxi trip.,numeric,Fare analysis.
+tip_amount,Recorded tip amount for the trip.,numeric,Tip behavior analysis.
+total_amount,"Total amount charged to passengers including fare, tips, taxes, surcharges, tolls, and fees.",numeric,Revenue analysis.
+revenue_per_mile,Total amount divided by trip distance.,numeric,Trip revenue efficiency analysis.
+fare_per_minute,Fare amount divided by trip duration in minutes.,numeric,Trip time efficiency analysis.
+tip_percentage,"Tip amount divided by fare amount, expressed as a percentage.",numeric,Tip behavior analysis.
+distance_bucket,Categorical grouping of trip distance.,categorical,"Short, medium, and long trip analysis."
+duration_bucket,Categorical grouping of trip duration.,categorical,Duration segment analysis.
+pickup_borough,NYC borough where the trip started.,categorical,Origin demand analysis.
+pickup_zone,Taxi zone where the trip started.,categorical,High-demand pickup zone analysis.
+dropoff_borough,NYC borough where the trip ended.,categorical,Destination demand analysis.
+dropoff_zone,Taxi zone where the trip ended.,categorical,High-demand destination zone analysis.
+is_high_value_trip,Flag for trips above the 99th percentile of total amount.,boolean,Outlier and premium trip analysis.
+is_long_distance_trip,Flag for trips above the 99th percentile of trip distance.,boolean,Long-distance trip analysis.
+is_long_duration_trip,Flag for trips above the 99th percentile of trip duration.,boolean,Long-duration trip analysis.
