@@ -1,29 +1,33 @@
-cat > .gitignore <<'EOF'
 # macOS
 .DS_Store
 
-
+# Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-
-
+*$py.class
 .venv/
+build/
+dist/
+*.egg-info/
 
-
+# Notebooks
 .ipynb_checkpoints/
+*/.ipynb_checkpoints/*
 
+# Data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.parquet
+*.csv
+*.twbx
+!tableau/*.twbx
 
+# Environment and Logs
 .env
-
-
-*.tmp
 *.log
+*.tmp
 
-
+# Exports
 exports/
-
-# Large processed data files
-data/processed/*.parquet
-EOF
