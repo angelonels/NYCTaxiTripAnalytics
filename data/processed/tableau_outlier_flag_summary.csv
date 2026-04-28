@@ -1,0 +1,4 @@
+outlier_flag,flagged_trip_count,flagged_trip_percentage
+High Value Trip,28210,0.9836002698711837
+Long Distance Trip,28598,0.9971286961281853
+Long Duration Trip,28669,0.9996042586649048
