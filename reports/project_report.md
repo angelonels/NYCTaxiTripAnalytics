@@ -1,10 +1,7 @@
 # NYC Taxi Trip Analytics — Final Project Report
 
-**Data Visualization & Analytics | Capstone 2**
-
----
-
 ## 1. Cover Page
+
 
 | Field | Details |
 |---|---|
@@ -12,7 +9,7 @@
 | **Sector** | Urban Mobility / Transportation Analytics |
 | **Institute** | Newton School of Technology |
 | **GitHub Repository** | https://github.com/angelonels/NYCTaxiTripAnalytics |
-| **Tableau Public Dashboard** | *(To be added after publishing)* |
+| **Tableau Public Dashboard** | [View Dashboard](https://prod-in-a.online.tableau.com/#/site/deepeshdey-7621b37a52/views/Final2/Dashboard1?:iid=1) |
 | **Submission Date** | April 2026 |
 
 ### Team Members & Roles
@@ -293,7 +290,7 @@ Manhattan is the dominant origin borough, generating 2,572,024 pickups (89.7% of
 | Borough | Trips | Avg Amount | Avg Distance | Avg Duration |
 |---|---|---|---|---|
 | Manhattan | 2,572,024 | $22.76 | 2.72 miles | 13.01 min |
-| Queens | 257,603 | $72.22 | 12.81 miles | 32.39 min |
+| Queens | 257,603 | $72.22 | 12.81 miles | 32.40 min |
 | Brooklyn | 22,254 | $33.19 | 14.82 miles | 31.64 min |
 | Bronx | 5,742 | $35.44 | 7.73 miles | 38.17 min |
 | Staten Island | 46 | $61.03 | 9.99 miles | 20.18 min |
@@ -426,6 +423,7 @@ An OLS regression model (Statsmodels) was fitted to explain total trip amount us
 Short trips (0–1 miles) generate **$19.32 median revenue per mile**, nearly 4× the efficiency of 20+ mile trips ($4.59/mile). However, volume-adjusted total revenue is highest in the 1–3 mile segment ($28.6M across January), driven by sheer trip count (1.4M trips).
 
 **Business implication:** A portfolio approach is optimal: maximize short-trip throughput in Manhattan for revenue efficiency, while positioning selectively for long-distance airport trips for absolute revenue size.
+# NYC Taxi Trip Analytics — Final Project Report
 
 ---
 
@@ -489,7 +487,7 @@ The dashboard includes interactive filters allowing users to:
 #### Tableau Public URL
 
 ```
-To be added after publishing the dashboard.
+Tableau Public URL: https://prod-in-a.online.tableau.com/#/site/deepeshdey-7621b37a52/views/Final2/Dashboard1?:iid=1
 See: tableau/dashboard_links.md
 ```
 
@@ -668,6 +666,24 @@ All chart PNGs are committed to `reports/figures/`:
 - `median_revenue_per_mile_by_distance_bucket.png`
 - `actual_vs_predicted_total_amount.png`
 
+### D. Processed Statistical Outputs
+
+All statistical summary CSVs are committed to `data/processed/`:
+- `statistical_pearson_correlation_matrix.csv`
+- `statistical_spearman_correlation_matrix.csv`
+- `statistical_correlation_test_results.csv`
+- `weekday_vs_weekend_statistical_tests.csv`
+- `pickup_borough_group_comparison_tests.csv`
+- `pickup_borough_statistical_summary.csv`
+- `payment_distance_chi_square_test.csv`
+- `payment_distance_distribution_percentages.csv`
+- `tip_behavior_statistical_test.csv`
+- `payment_tip_statistical_summary.csv`
+- `distance_efficiency_summary.csv`
+- `ols_revenue_driver_coefficients.csv`
+- `ols_revenue_driver_model_summary.csv`
+- `sklearn_revenue_model_performance.csv`
+
 ---
 
 ## 18. Contribution Matrix
@@ -680,25 +696,25 @@ All chart PNGs are committed to `reports/figures/`:
 | **Statistical Analysis** | ✅ Primary | | | | |
 | **Final Load Prep** | | | ✅ Primary | | |
 | **Tableau Dashboard** | | | | ✅ 50% | ✅ 50% |
-| **Report Writing** | ✅ Primary | | ✅ Contributed | | |
-| **PPT & Viva Prep** | | | | | |
+| **Report Writing** | ✅ Lead | | ✅ Contributed | | |
+| **PPT & Viva Prep** | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Contribution Notes (Based on GitHub Commit History)
 
 **Angelo Nelson (`angelonels`):**
-Commits: Initial project setup, folder structure with `uv`, raw data extraction notebook (`01_extraction.ipynb`), full ETL and cleaning pipeline (`02_cleaning.ipynb`, `scripts/etl_pipeline.py`), EDA notebook (`03_eda.ipynb`), processed summary CSVs, dataset profile and cleaning documentation, README updates.
-*Primary contributor for Dataset Sourcing, ETL, and Exploratory Data Analysis.*
+Primary contributor for Dataset Sourcing, ETL, and Exploratory Data Analysis. Built the initial foundation of the project including extraction, cleaning, and EDA notebooks.
 
 **Ayush Kumar Singh (`AyushCoder9`):**
-Commits: All 52 commits comprising the complete statistical analysis notebook (`04_statistical_analysis.ipynb`) — covering correlation analysis, weekday/weekend hypothesis testing, borough group comparison, chi-square test for payment behavior, tip behavior analysis, OLS regression, Scikit-learn model evaluation, revenue efficiency analysis, statistical findings report, visualization plots, and processed statistical datasets.
-*Primary contributor for Statistical Analysis and Report Writing.*
+Primary contributor for Statistical Analysis and Lead for Final Report Writing. Conducted all hypothesis testing, regression modeling, and synthesized the final technical documentation.
 
 **Isha Singh (`Ishiezz`):**
-Commits: Final load preparation notebook (`05_final_load_prep.ipynb`), all 13 Tableau-ready processed CSV files, data dictionary (`docs/data_dictionary.md`), Tableau data guide documentation, final load summary documentation, Tableau dashboard placeholder link.
-*Primary contributor for Final Load Preparation and Documentation.*
+Primary contributor for Final Load Preparation and Documentation. Prepared the Tableau-ready datasets and authored the data dictionary and technical summaries.
 
-**Deepesh Dey:**
-Built and published the Tableau Public dashboard — executive KPI view, daily revenue trend, hourly demand chart, borough demand visualization, top 10 pickup zones, payment distribution, distance vs total amount scatter, and all interactive filters. Responsible for 50% of dashboard design and layout decisions.
+**Deepesh Dey (`deepesh224-ux`):**
+Primary contributor for Tableau Dashboard design and interactivity. Focused on executive KPI views, revenue trends, and operational drill-downs.
 
 **Rohit Nair P:**
-Co-built the Tableau Public dashboard — drop-off borough demand, tip percentage by payment type, trips by distance bucket, revenue per mile by distance bucket, day-of-week analysis, and tab navigation structure. Responsible for 50% of dashboard design and drill-down view construction.
+Primary contributor for Tableau Dashboard design and Repository Branding. Restructured the project documentation and README for professional presentation.
+
+**All Team Members:**
+Contributed equally to PPT and Viva preparation and final group presentation rehearsal.
