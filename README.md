@@ -2,57 +2,56 @@
   <img src="assets/logo.png" alt="NYC Taxi Trip Analytics Logo" width="400">
 </p>
 
-# 🚖 NYC Taxi Trip Analytics
+# NYC Taxi Trip Analytics
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 [![uv](https://img.shields.io/badge/managed%20by-uv-arc.svg)](https://github.com/astral-sh/uv)
 [![Tableau](https://img.shields.io/badge/Visualization-Tableau-orange.svg)](https://public.tableau.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 
 > [!NOTE]
 > This project analyzes New York City Yellow Taxi trip records to understand taxi demand, revenue patterns, trip efficiency, payment behavior, and pickup/drop-off location trends.
 
 The project uses **Python** for data extraction, cleaning, exploratory data analysis, statistical analysis, and final dataset preparation. **Tableau** will be used later for dashboarding and business insight presentation.
 
-### 🏢 Sector
-**Urban Mobility / Transportation Analytics**
+### Sector
+Urban Mobility / Transportation Analytics
 
-### 🎯 Problem Statement
+### Problem Statement
 Taxi operators and urban mobility planners need to understand when, where, and how taxi demand is generated in order to improve fleet positioning, revenue planning, and service efficiency.
 
 This project uses NYC Yellow Taxi trip-level data to analyze:
-- 📈 Demand patterns & Revenue behavior
-- 🛣️ Trip distance & Duration
-- 💳 Payment methods & Tipping behavior
-- 📍 Location-based trends
+- Demand patterns & Revenue behavior
+- Trip distance & Duration
+- Payment methods & Tipping behavior
+- Location-based trends
 
 **Goal:** Create a clean analytical dataset, generate business insights, and build a decision-focused Tableau dashboard.
 
 ---
 
-## 📊 Dataset Information
+## Dataset Information
 
 | Feature | Primary Dataset | Supporting Dataset |
 | :--- | :--- | :--- |
 | **Name** | NYC TLC Yellow Taxi Trip Records | NYC Taxi Zone Lookup Table |
 | **Period** | January 2024 | N/A |
 | **Format** | Parquet | CSV |
-| **Source** | NYC TLC | NYC TLC |
-| **Purpose** | Core trip data | Mapping Location IDs to Boroughs/Zones |
+| **Source** | NYC Taxi & Limousine Commission | NYC Taxi & Limousine Commission |
+| **Purpose** | Core trip record data | Mapping location IDs to Boroughs/Zones |
 
-### 🔗 Quick Links
+### Dataset Links
 - [Primary Dataset Link](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet)
 - [Official Dataset Page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
-- [Data Dictionary](https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf)
-- [Zone Lookup Table](https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv)
+- [Official Data Dictionary](https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf)
+- [Zone Lookup Table Link](https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv)
 
 ---
 
-## 🔍 Main Data Fields
+## Main Data Fields
 
 <details>
 <summary><b>Click to expand Yellow Taxi Trip Fields</b></summary>
@@ -88,7 +87,7 @@ This project uses NYC Yellow Taxi trip-level data to analyze:
 
 ---
 
-## 🛠️ Tools and Technologies
+## Tools and Technologies
 
 | Category | Tools |
 | :--- | :--- |
@@ -101,58 +100,75 @@ This project uses NYC Yellow Taxi trip-level data to analyze:
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 NYCTaxiTripAnalytics/
-├── assets/                       # Branding and logos
+├── assets/                       # Branding and logo files
 ├── data/
 │   ├── raw/                      # Raw parquet + zone csv (not tracked)
-│   └── processed/                # Cleaned CSVs and summary tables
-├── notebooks/                    # Sequential analysis notebooks
-├── scripts/                      # Standalone ETL pipelines
-├── docs/                         # Documentation and cleaning logs
-├── reports/                      # Findings and generated figures
-│   └── figures/                  # Chart outputs from EDA
-└── tableau/                      # Tableau workbooks and links
+│   └── processed/                # Cleaned CSVs and summary tables for analysis
+├── notebooks/
+│   ├── 01_extraction.ipynb
+│   ├── 02_cleaning.ipynb
+│   ├── 03_eda.ipynb
+│   ├── 04_statistical_analysis.ipynb
+│   └── 05_final_load_prep.ipynb
+├── scripts/
+│   └── etl_pipeline.py               # Standalone cleaning pipeline
+├── docs/
+│   ├── raw_dataset_profile.md
+│   ├── cleaning_summary.md
+│   ├── data_dictionary.md
+│   ├── final_load_summary.md
+│   └── tableau_data_files.md
+├── reports/
+│   ├── project_report.md
+│   ├── eda_initial_findings.md
+│   ├── statistical_analysis_findings.md
+│   └── figures/                      # Chart PNGs from EDA
+└── tableau/
+    ├── Final2.twbx                   # Tableau workbook file
+    ├── dashboard_links.md
+    └── screenshots/
 ```
 
 ---
 
-## 🚀 Local Project Setup
+## Local Project Setup
 
-### 1️⃣ Clone the Repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/angelonels/NYCTaxiTripAnalytics.git
 cd NYCTaxiTripAnalytics
 ```
 
-### 2️⃣ Install `uv`
+### 2. Install uv
+If `uv` is not already installed:
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-# Restart terminal or run:
 exec $SHELL
 ```
 
-### 3️⃣ Setup Environment
+### 3. Setup Environment
 ```bash
 uv sync
 ```
 
-### 4️⃣ Download Data
+### 4. Download Raw Dataset
 ```bash
 curl -L "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet" -o data/raw/yellow_tripdata_2024-01.parquet
 curl -L "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv" -o data/raw/taxi_zone_lookup.csv
 ```
 
-### 5️⃣ Start Analysis
+### 5. Start JupyterLab
 ```bash
 uv run jupyter lab
 ```
 
 ---
 
-## 🔄 Project Workflow
+## Project Workflow
 
 ```diff
 + 01. Dataset Sourcing & Extraction
@@ -173,18 +189,26 @@ uv run jupyter lab
 
 ---
 
-## 📈 Key Performance Indicators (KPIs)
+## Key Performance Indicators
 
-- ✅ **Volume**: Total Trips
-- ✅ **Financials**: Total Revenue, Avg Fare, Rev per Mile
-- ✅ **Trips**: Avg Distance, Avg Duration
-- ✅ **Behavior**: Avg Tip, Tip Percentage, Payment Type Dist.
-- ✅ **Demand**: Peak Hour, Top Pickup/Drop-off Boroughs
+- Total Trips
+- Total Revenue
+- Average Fare Amount
+- Average Trip Distance
+- Average Trip Duration
+- Revenue per Mile
+- Average Tip Amount
+- Tip Percentage
+- Peak Demand Hour
+- Top Pickup Borough
+- Top Drop-off Borough
+- Payment Type Distribution
 
 ---
 
-## 📝 Notes
-- Keep `data/raw/` immutable.
-- Save outputs only in `data/processed/`.
-- Run notebooks sequentially.
-- Uses `uv` for modern dependency management.
+## Notes
+
+- The raw dataset should remain unchanged inside `data/raw/`.
+- Cleaned and transformed files should be saved only inside `data/processed/`.
+- All notebooks should be run in order.
+- The project uses `uv` instead of `pip` for dependency and environment management.
