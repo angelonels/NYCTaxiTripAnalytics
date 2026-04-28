@@ -2,11 +2,15 @@
   <img src="assets/logo.png" alt="NYC Taxi Trip Analytics Logo" width="400">
 </p>
 
+<div align="center">
+  
 # NYC Taxi Trip Analytics
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 [![uv](https://img.shields.io/badge/managed%20by-uv-arc.svg)](https://github.com/astral-sh/uv)
 [![Tableau](https://img.shields.io/badge/Visualization-Tableau-orange.svg)](https://public.tableau.com/)
+
+</div>
 
 ---
 
