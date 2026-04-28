@@ -1,0 +1,14 @@
+kpi_name,kpi_value,kpi_unit
+Total Trips,2868035,Trips
+Total Revenue,78407817.41,USD
+Average Total Amount,27.338514840300064,USD per trip
+Average Fare Amount,18.4893579401925,USD per trip
+Average Trip Distance,3.7317921468880266,Miles
+Average Trip Duration,14.956520556176384,Minutes
+Average Revenue per Mile,17.48797870013541,USD per mile
+Average Tip Amount,3.4025089756575495,USD
+Average Tip Percentage,21.415566675745712,Percentage
+Credit Card Payment Share,80.08936432086777,Percentage
+Peak Pickup Hour,18,Hour
+Top Pickup Borough,Manhattan,Borough
+Top Drop-off Borough,Manhattan,Borough
