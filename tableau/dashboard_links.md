@@ -2,11 +2,9 @@
 
 ## Final Dashboard
 
-Tableau Public URL:
+Tableau Public URL: https://prod-in-a.online.tableau.com/#/site/deepeshdey-7621b37a52/views/Final2/Dashboard1?:iid=1
 
-```text
-To be added after publishing the dashboard.
-```
+
 
 ## Notes
 
