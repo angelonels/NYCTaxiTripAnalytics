@@ -1,0 +1,2 @@
+comparison,credit_card_average_tip_percentage,cash_average_tip_percentage,mean_difference_credit_minus_cash,t_statistic,t_test_p_value,t_test_result,mannwhitney_u_statistic,mannwhitney_p_value,mannwhitney_result,cohen_d_credit_vs_cash,interpretation_note
+Credit card vs Cash,25.51050544349547,0.00048536817198212236,25.51002007532349,852.2939893813189,0.0,Statistically significant,11501046356.5,0.0,Statistically significant,1.8412609781284692,"Cash tips may be under-recorded, so this result should be treated as recorded-tip behavior, not complete customer tipping behavior."

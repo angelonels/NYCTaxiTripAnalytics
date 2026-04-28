@@ -1,0 +1,6 @@
+metric,value
+r_squared,0.9295748880037236
+adjusted_r_squared,0.9295701926675837
+aic,1751245.6125467126
+bic,1751468.454839539
+number_of_observations,300000.0

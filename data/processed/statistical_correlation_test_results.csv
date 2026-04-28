@@ -1,0 +1,8 @@
+variable,pearson_correlation_with_total_amount,pearson_p_value,pearson_result,spearman_correlation_with_total_amount,spearman_p_value,spearman_result
+fare_amount,0.9785812519155662,0.0,Statistically significant,0.9636252072199406,0.0,Statistically significant
+trip_duration_minutes,0.7884267895069822,0.0,Statistically significant,0.916883402787757,0.0,Statistically significant
+trip_distance,0.027647549248280924,3.96013180205665e-35,Statistically significant,0.9016323151975284,0.0,Statistically significant
+tip_amount,0.7264810825024152,0.0,Statistically significant,0.5745203586041675,0.0,Statistically significant
+tip_percentage,-0.04228868699036123,7.743354890452239e-80,Statistically significant,-0.10735892852851169,0.0,Statistically significant
+fare_per_minute,0.0745433965654614,2.4147505141449124e-244,Statistically significant,-0.154879020145397,0.0,Statistically significant
+revenue_per_mile,0.05114785639531439,5.99955122663099e-116,Statistically significant,-0.6944537819126966,0.0,Statistically significant

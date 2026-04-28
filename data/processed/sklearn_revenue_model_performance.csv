@@ -1,0 +1,6 @@
+metric,value
+Mean Absolute Error,2.3550071733310394
+Root Mean Squared Error,4.492153525290717
+R-squared,0.9289274240505517
+Training Rows,240000.0
+Testing Rows,60000.0

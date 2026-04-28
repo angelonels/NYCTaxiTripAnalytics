@@ -1,0 +1,2 @@
+test_name,chi2_statistic,degrees_of_freedom,p_value,result,cramers_v
+Chi-square test of independence,5348.976679886959,5,0.0,Statistically significant,0.04435145877193418

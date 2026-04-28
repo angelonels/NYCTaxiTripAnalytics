@@ -1,0 +1,3 @@
+test_name,test_statistic,p_value,result
+One-way ANOVA,74907.72544239329,0.0,Statistically significant
+Kruskal-Wallis,57513.49059745905,0.0,Statistically significant
