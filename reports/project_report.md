@@ -690,31 +690,31 @@ All statistical summary CSVs are committed to `data/processed/`:
 
 | Phase | Ayush Kumar Singh | Angelo Nelson | Isha Singh | Deepesh Dey | Rohit Nair P |
 |---|---|---|---|---|---|
-| **Dataset & Sourcing** | | ✅ Primary | | | |
-| **ETL & Cleaning** | | ✅ Primary | | | |
-| **EDA & Analysis** | | ✅ Primary | | | |
-| **Statistical Analysis** | ✅ Primary | | | | |
-| **Final Load Prep** | | | ✅ Primary | | |
-| **Tableau Dashboard** | | | | ✅ 50% | ✅ 50% |
-| **Report Writing** | ✅ Lead | | ✅ Contributed | | |
+| **Dataset & Sourcing** | | ✅ | | | ✅ |
+| **ETL & Cleaning** | | ✅ | | | |
+| **EDA & Analysis** | | ✅ | | | |
+| **Statistical Analysis** | ✅ | | | ✅ | |
+| **Final Load Prep** | | | ✅ | | |
+| **Tableau Dashboard** | | | | ✅ | ✅ |
+| **Report Writing** | ✅ | | ✅ | | |
 | **PPT & Viva Prep** | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ### Contribution Notes (Based on GitHub Commit History)
 
 **Angelo Nelson (`angelonels`):**
-Primary contributor for Dataset Sourcing, ETL, and Exploratory Data Analysis. Built the initial foundation of the project including extraction, cleaning, and EDA notebooks.
+✅ Dataset Sourcing, ETL, and Exploratory Data Analysis. Built the core data pipeline foundation and initial exploratory insights.
 
 **Ayush Kumar Singh (`AyushCoder9`):**
-Primary contributor for Statistical Analysis and Lead for Final Report Writing. Conducted all hypothesis testing, regression modeling, and synthesized the final technical documentation.
+✅ Statistical Analysis and Final Report Writing Lead. Conducted hypothesis testing, regression modeling, and technical synthesis.
 
 **Isha Singh (`Ishiezz`):**
-Primary contributor for Final Load Preparation and Documentation. Prepared the Tableau-ready datasets and authored the data dictionary and technical summaries.
+✅ Final Load Preparation and Report Writing. Prepared Tableau-ready summaries and authored data dictionary components.
 
 **Deepesh Dey (`deepesh224-ux`):**
-Primary contributor for Tableau Dashboard design and interactivity. Focused on executive KPI views, revenue trends, and operational drill-downs.
+✅ Tableau Dashboard Design and Statistical Analysis. Focused on executive visualization and collaborative statistical verification.
 
 **Rohit Nair P:**
-Primary contributor for Tableau Dashboard design and Repository Branding. Restructured the project documentation and README for professional presentation.
+✅ Tableau Dashboard Design and Dataset Sourcing. Focused on operational visualizations, repository branding, and source data management.
 
 **All Team Members:**
-Contributed equally to PPT and Viva preparation and final group presentation rehearsal.
+✅ Equally contributed to PPT and Viva preparation, rehearsal, and final documentation review.
