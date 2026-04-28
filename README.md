@@ -1,4 +1,9 @@
+<p align="center">
+  <img src="assets/logo.png" alt="NYC Taxi Trip Analytics Logo" width="300">
+</p>
+
 # NYC Taxi Trip Analytics
+
 
 ## Project Overview
 
