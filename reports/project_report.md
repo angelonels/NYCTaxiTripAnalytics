@@ -445,8 +445,8 @@ Five headline KPIs are displayed at the top:
 
 | KPI | Value Displayed |
 |---|---|
-| Total Trips | 90B (aggregated display) |
-| Total Revenue | $2,462B (aggregated display) |
+| Total Trips | 2.87M (validated count) |
+| Total Revenue | $78.4M (total monthly revenue) |
 | Avg Total Amount | $27 |
 | Avg Trip Distance | 3.65 mi |
 | Avg Trip Duration | 14.96 min |
