@@ -228,6 +228,9 @@ uv run jupyter lab
 
 ## Project Team
 
-- **Rohit Nair P** — [GitHub](https://github.com/angelonels)
-- **Ayush Singh** — [GitHub](https://github.com/AyushCoder9)
 - **Deepesh Dey** — [GitHub](https://github.com/deepesh224-ux)
+- **Rohit Nair P** — [GitHub](https://github.com/Vegapunk-debug)
+- **Ayush Singh** — [GitHub](https://github.com/AyushCoder9)
+- **Isha Singh** — [GitHub](https://github.com/Ishiezz)
+- **Angelo Nelson** — [GitHub](https://github.com/angelonels)
+
