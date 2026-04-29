@@ -591,6 +591,7 @@ The following 10 insights are written in decision language — each states what 
 | Credit Card Adoption Incentives | +$175,700 tip revenue | Medium | 60 days |
 | Evening Peak Fleet Deployment | +$4.05M recoverable revenue | Medium | 30 days |
 | Outer Borough Demand Growth | +$952,000 revenue | Low-Medium | 90 days |
+| Dynamic Morning/Evening Deployment | +$3.38M high-margin revenue | Medium-High | 45 days |
 | Benchmarking Realignment | Non-monetary | High | 14 days |
 
 **Why act now?** January 2024 represents a post-holiday demand trough. If these structural patterns hold in higher-demand months (May–October), the uplift potential is proportionally larger. Early implementation allows the fleet to enter the spring and summer peak season with optimized positioning already in place.
