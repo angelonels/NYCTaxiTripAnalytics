@@ -223,3 +223,11 @@ uv run jupyter lab
 - Cleaned and transformed files should be saved only inside `data/processed/`.
 - All notebooks should be run in order.
 - The project uses `uv` instead of `pip` for dependency and environment management.
+
+---
+
+## Project Team
+
+- **Rohit Nair P** — [GitHub](https://github.com/angelonels)
+- **Ayush Singh** — [GitHub](https://github.com/AyushCoder9)
+- **Deepesh Dey** — [GitHub](https://github.com/deepesh224-ux)
