@@ -210,6 +210,15 @@ uv run jupyter lab
 
 ---
 
+## Tableau Dashboard
+
+> [!TIP]
+> View the interactive dashboard on [Tableau Public](https://public.tableau.com/app/profile/deepesh.dey/viz/shared/Q7XF5GW9J).
+
+![Tableau Dashboard Preview](tableau/screenshots/dashboard_preview.png)
+
+---
+
 ## Notes
 
 - The raw dataset should remain unchanged inside `data/raw/`.
