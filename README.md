@@ -35,6 +35,13 @@ This project uses NYC Yellow Taxi trip-level data to analyze:
 
 **Goal:** Create a clean analytical dataset, generate business insights, and build a decision-focused Tableau dashboard.
 
+## Tableau Dashboard
+
+> [!TIP]
+> View the interactive dashboard on [Tableau Public](https://public.tableau.com/app/profile/deepesh.dey/viz/shared/Q7XF5GW9J).
+
+![Tableau Dashboard Preview](tableau/screenshots/dashboard_preview.png)
+
 ---
 
 ## Dataset Information
@@ -207,15 +214,6 @@ uv run jupyter lab
 - Top Pickup Borough
 - Top Drop-off Borough
 - Payment Type Distribution
-
----
-
-## Tableau Dashboard
-
-> [!TIP]
-> View the interactive dashboard on [Tableau Public](https://public.tableau.com/app/profile/deepesh.dey/viz/shared/Q7XF5GW9J).
-
-![Tableau Dashboard Preview](tableau/screenshots/dashboard_preview.png)
 
 ---
 
