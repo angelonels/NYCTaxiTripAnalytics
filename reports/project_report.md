@@ -573,6 +573,16 @@ The following 10 insights are written in decision language — each states what 
 
 ---
 
+### Recommendation 6: Implement Dynamic Deployment for the "Morning Surge" vs "Evening Peak"
+
+**Insight → Recommendation:** While Hour 18 (6 PM) is the highest volume peak, the 5 AM – 7 AM window yields the highest average fare per trip ($37.56) due to airport runs. We recommend a "bi-modal" deployment strategy: target Midtown/Hotel clusters for high-value airport runs at dawn, and switch to high-volume residential-to-business efficiency during the evening.
+
+**Expected Impact:** Capturing an additional 10% of the early morning high-value window (≈3,000 trips/day) at the $37.56 rate contributes approximately **$3.38M/month** in high-margin revenue.
+
+**Feasibility:** Requires driver education and optional early-bird shift incentives. Low capital cost, high potential for improving driver satisfaction due to higher per-trip earnings.
+
+---
+
 ## 13. Impact Estimation
 
 | Recommendation | Monthly Impact Estimate | Confidence | Time to Implement |
